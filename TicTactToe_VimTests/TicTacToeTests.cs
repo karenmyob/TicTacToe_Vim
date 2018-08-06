@@ -45,5 +45,29 @@ namespace TicTactToe_VimTests
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void ShouldPlaceXTokenAtPosition()
+        {
+            var expected = new List<string>
+            {
+               ".", "X", ".",
+               ".", ".", ".",
+               ".", ".", ".", 
+            };
+
+            var inputBoard = new List<string>
+            {
+               ".", ".", ".",
+               ".", ".", ".",
+               ".", ".", ".", 
+            };
+            const int position = 2;
+
+            var game = new TicTacToe();
+            var result = game.PlaceToken(inputBoard, position);
+            
+            CollectionAssert.AreEqual(expected, result);
+        }
     }
 }

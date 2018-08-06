@@ -5,13 +5,6 @@ namespace TicTacToe_Vim
 {
     public class TicTacToe
     {
-        public string RenderBoard()
-        {
-            return "...\n" +
-                   "...\n" +
-                   "...\n";
-        }
-
         public object RenderBoard(List<string> board)
         {
             var outputBoard = "";
@@ -26,6 +19,11 @@ namespace TicTacToe_Vim
             }
 
             return outputBoard;
+        }
+
+        public List<string> PlaceToken(List<string> inputBoard, int position)
+        {
+            return new List<string>(inputBoard) {[position - 1] = "X"};
         }
     }
 }
